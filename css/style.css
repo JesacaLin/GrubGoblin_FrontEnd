@@ -52,19 +52,25 @@
   /* REGULAR CSS */
 
   body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     nav {
         display: flex;
         justify-content: space-around;
         background-color: lightblue;
         /* height: 100%; */
-        padding: 15px 0;
+        padding: 10px 0;
 
         li {
             list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            
 
             .bi {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
           }
     }
