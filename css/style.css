@@ -170,20 +170,44 @@ body {
     }
 
     article {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-template-areas:
+        "img img"
+        "detailsLeft detailsRight";
       background-color: rgb(230, 227, 227);
       margin: 1rem;
       border-radius: 20px;
       padding-bottom: 20px;
 
       .deal-cards-image {
+        grid-area: img;
         max-width: 100%;
         border-radius: 20px 20px 0 0;
       }
 
-      h3,
-      p {
+      .deal-card-details {
+        grid-area: detailsLeft;
         padding: 5px 20px;
       }
+
+      .deal-card-details-right {
+        grid-area: detailsRight;
+
+        .deal-card-rating {
+          justify-self: end;
+        }
+
+        #deal-card-info-button {
+          align-self: end;
+          justify-self: end;
+        }
+      }
+
+      /* #deal-card-info-button {
+        justify-self: end;
+      } */
     }
   }
 
