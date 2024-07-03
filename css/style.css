@@ -3,76 +3,208 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  /*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
     2. Remove default margin
   */
-  * {
-    margin: 0;
-  }
-  /*
+* {
+  margin: 0;
+}
+/*
     Typographic tweaks!
     3. Add accessible line-height
     4. Improve text rendering
   */
-  body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  /*
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
     5. Improve media defaults
   */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  /*
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
     6. Remove built-in form typography styles
   */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  /*
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
     7. Avoid text overflows
   */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  /*
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
     8. Create a root stacking context
   */
-  #root, #__next {
-    isolation: isolate;
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* REGULAR CSS */
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  list-style: none;
+  margin-bottom: 7rem;
+
+  button {
+    border-radius: 30px;
+    padding: 0.3rem 2.5rem;
   }
 
+  input {
+    border-radius: 15px;
+    height: 3rem;
+  }
 
-
-  /* REGULAR CSS */
-
-  body {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-    nav {
-        display: flex;
-        justify-content: space-around;
-        background-color: lightblue;
-        /* height: 100%; */
-        padding: 10px 0;
-
-        li {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 12px;
-            
-
-            .bi {
-                font-size: 1.5rem;
-            }
-          }
+  header {
+    /* HAMBURGER MENU */
+    li {
+      font-size: 40px;
+      text-align: right;
     }
 
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    img {
+      width: 7rem;
+      padding-bottom: 1.5rem;
+    }
   }
+
+  main {
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "h4 h4 h4"
+      "locateMe centerLine inputSearch"
+      "section section section";
+    row-gap: 4.5rem;
+    justify-items: center;
+    align-items: center;
+
+    h4 {
+      grid-area: h4;
+      padding: 4rem 0 1rem 0;
+    }
+
+    #locate-me {
+      grid-area: locateMe;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      img {
+        width: 4rem;
+      }
+    }
+
+    .center-line {
+      grid-area: centerLine;
+      width: 3px;
+      height: 150%;
+      background-color: black;
+      margin: 0 auto;
+    }
+
+    #input-search {
+      grid-area: inputSearch;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding-right: 1rem;
+    }
+
+    #deals-section {
+      grid-area: section;
+    }
+
+    h4 {
+      text-align: center;
+    }
+
+    .filter {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+
+      i {
+        font-size: 35px;
+      }
+
+      span {
+        font-size: 20px;
+      }
+    }
+
+    article {
+      background-color: rgb(230, 227, 227);
+      margin: 1rem;
+      border-radius: 20px;
+      padding-bottom: 20px;
+
+      .deal-cards-image {
+        max-width: 100%;
+        border-radius: 20px 20px 0 0;
+      }
+
+      h3,
+      p {
+        padding: 5px 20px;
+      }
+    }
+  }
+
+  nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: lightblue;
+    padding: 10px 0;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+
+      .bi {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

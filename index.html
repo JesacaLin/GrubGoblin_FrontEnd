@@ -1,23 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <li><i class="bi bi-list"></i></li>
+      <div>
+        <img src="assets/logo-1.png" alt="grub goblin logos" />
+        <h1 id="user-greeting">Hi, Jesaca!</h1>
+      </div>
+    </header>
+    <main>
+      <h4>START YOUR SEARCH HERE</h4>
+      <section id="locate-me">
+        <img
+          src="assets/locate-me-icon.png"
+          id="locate-me-logo"
+          alt="locate me icon"
+        />
+        <button type="button">Locate Me</button>
+      </section>
+
+      <div class="center-line"></div>
+
+      <section id="input-search">
+        <input
+          type="text"
+          id="search-input"
+          name="search"
+          placeholder="Enter city or zip code"
+        />
+        <button type="submit">Search</button>
+      </section>
+      <section id="deals-section">
+        <h4>NEW DEALS FROM THE COMMUNITY</h4>
+        <div class="filter">
+          <i class="bi bi-sort-down"></i>
+          <span>filter </span>
+        </div>
+        <div class="deal-cards">
+          <article>
+            <img
+              src="assets/tacos.jpg"
+              class="deal-cards-image"
+              alt="a photo of tacos"
+            />
+            <div class="deal-card-details">
+              <h3 class="deal-card-name">Name</h3>
+              <p class="deal-card-type">type of deal</p>
+              <p class="deal-card-availability">availability</p>
+              <p class="deal-card-address">address</p>
+              <!-- <p class="deal-card-distance">distance from user</p> -->
+              <p class="deal-card-rating">user rating</p>
+              <button type="button" id="card-deal-info-button">
+                More info
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
     <nav>
-        <li><i class="bi bi-house"></i>Home</li>
-        <li><i class="bi bi-suit-heart"></i>My Deals</li>
-        <li><i class="bi bi-patch-plus-fill"></i>Add</li>
-        <li><i class="bi bi-search"></i>Search</li>
-        <li><i class="bi bi-person-circle"></i>Profile</li>
-       
+      <li><i class="bi bi-house"></i>Home</li>
+      <li><i class="bi bi-suit-heart"></i>My Deals</li>
+      <li><i class="bi bi-patch-plus-fill"></i>Add</li>
+      <li><i class="bi bi-search"></i>Search</li>
+      <li><i class="bi bi-person-circle"></i>Profile</li>
     </nav>
-    
 
     <script type="module" src="js/script.js"></script>
-</body>
+  </body>
 </html>
