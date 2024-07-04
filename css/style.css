@@ -217,14 +217,14 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: lightblue;
-    padding: 8px 0;
+    background-color: rgb(217, 218, 219);
+    padding: 6px 0;
 
     li {
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-size: 12px;
+      font-size: 10px;
 
       .bi {
         font-size: 1.5rem;
