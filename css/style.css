@@ -72,7 +72,7 @@ body {
   /* grayed out for some reason */
   scrollbar-gutter: none;
   overflow-y: auto;
-  margin: 0 0 7rem 0;
+  margin: 0 0 6rem 0;
 
   button {
     border-radius: 30px;
@@ -133,6 +133,7 @@ body {
 
     .center-line {
       grid-area: centerLine;
+      align-items: center;
       width: 3px;
       height: 150%;
       background-color: black;
@@ -217,7 +218,7 @@ body {
     display: flex;
     justify-content: space-around;
     background-color: lightblue;
-    padding: 10px 0;
+    padding: 8px 0;
 
     li {
       display: flex;
