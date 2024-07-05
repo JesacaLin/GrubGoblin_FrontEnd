@@ -1,9 +1,3 @@
-//grab all articles
-//grab the button store in variable and add an event listener
-//initialize fetch api
-//use forEach to set the data
-
-
 
 async function getDealData() {
   const response = await fetch('http://localhost:8080/deal/details');
@@ -12,20 +6,44 @@ async function getDealData() {
   return data
 }
 
+const dealCardTemplate = (deal) => `
+  <article>
+            <div class="deal-image-container">
+              <img
+                src="assets/goblin-meal.jpg"
+                class="deal-cards-image"
+                alt="a photo of tacos"
+              />
+            </div>
+            <div class="deal-card-details">
+              <h3 class="deal-card-name">${deal.placeName}</h3>
+              <p class="deal-card-type">${deal.typeOfDeal}</p>
+              <p class="deal-card-availability">${deal.daysOfWeek}</p>
+              <p class="deal-card-address">
+                ${deal.address}
+              </p>
+            </div>
+            <div class="deal-card-details-right">
+              <p class="deal-card-rating">${deal.stars}</p>
+              <button type="button" class="deal-card-info-button">
+                More info
+              </button>
+            </div>
+  </article>
+`;
 
-async function populateDealCards() {
+async function createAndAppendDealCards() {
   const dealData = await getDealData();
-  const dealCards = document.querySelectorAll("article");
-  console.log(dealData)
-  
-  dealData.forEach((deal, index) => {
-    const dealCard = dealCards[index];
-    dealCard.querySelector(".deal-card-name").textContent = deal.placeName;
-    dealCard.querySelector(".deal-card-type").textContent = deal.typeOfDeal;
+  const dealContainer = document.getElementById('deal-cards');
+
+  dealData.forEach(deal => {
+    dealContainer.insertAdjacentHTML('beforeend', dealCardTemplate(deal));
     console.log('inside forEach')
-  })
-  console.log('inside populateDealCards')
+  });
+
+  console.log('inside createAndAppendDealCards')
 }
 
-document.getElementById("locate-me-button").addEventListener('click', populateDealCards);
+
+document.getElementById("locate-me-button").addEventListener('click', createAndAppendDealCards);
 
