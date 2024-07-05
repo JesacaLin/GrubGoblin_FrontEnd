@@ -8,11 +8,13 @@ async function getDealData() {
 
 const dealCardTemplate = (deal) => `
   <article>
-            <img
-              src="assets/tacos.jpg"
-              class="deal-cards-image"
-              alt="a photo of tacos"
-            />
+            <div class="deal-image-container">
+              <img
+                src="assets/goblin-meal.jpg"
+                class="deal-cards-image"
+                alt="a photo of tacos"
+              />
+            </div>
             <div class="deal-card-details">
               <h3 class="deal-card-name">${deal.placeName}</h3>
               <p class="deal-card-type">${deal.typeOfDeal}</p>
