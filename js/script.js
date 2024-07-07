@@ -73,5 +73,4 @@ document.getElementById('locate-me-button').addEventListener('click', ()=> {
       }
 
     document.getElementById('search-input').value = '';
-
   })
